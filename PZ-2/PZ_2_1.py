@@ -17,7 +17,10 @@ while type(cost_candy_old) != int:
         print("Invalid input!!!")
         cost_candy_old = int(input('Enter an integer: '))
 
+
+# How much does one kg of sweets cost?
 cost_one_candy = float(number_candies_old / cost_candy_old)
+
 number_candies_new = int(input('Enter the new number of candies: '))
 while type(number_candies_new) != int:
     try:
