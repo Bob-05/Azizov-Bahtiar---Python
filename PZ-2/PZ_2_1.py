@@ -1,21 +1,23 @@
-# Известно, что X кг конфет стоит A рублей;
+# Известно, что X кг конфет стоит A рублей.
 # Определить, сколько стоит 1 кг и Y кг этих же конфет.
 
-def get_positive_int(promt):
+def get_positive_int (promt):
+
     while True:
+
         try:
             value = int(input(promt))
             if value > 0:
                 return value
             else:
-                print ("Enter a number greater than zero.")
+                print("Enter a number greater than zero.")
 
         except ValueError:
             print("Incorrect input!!! Enter a positive integer")
 
 
 weight_candies_old = get_positive_int('Enter the weight of the candies in kilograms: ')
-cost_candy_old = float(input('Enter the cost in rubles: '))
+cost_candy_old = get_positive_int('Enter the cost in rubles: ')
 
 cost_one_kilogram = cost_candy_old / weight_candies_old
 
