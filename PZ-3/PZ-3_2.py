@@ -1,7 +1,7 @@
 # Даны координаты точки, не лежащей на координатных осях OX и OY.
 #Определить номер координатной четверти, в которой находится данная точка.
 
-def check (digit):
+def check(digit):
     value = input(digit)
 
     while type(value) != float:
