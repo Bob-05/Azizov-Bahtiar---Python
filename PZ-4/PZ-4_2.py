@@ -16,6 +16,36 @@ def check (type_string):
             value = input(type_string)
 
 
-number_A = 0
-number_B = 0
-number_C = 0
+number_A = check('Enter number A: ')
+number_B = check('Enter number B: ')
+number_C = check('Enter number C: ')
+
+Rectangle_area = 0
+
+while True:
+    if number_B > 0:
+        Rectangle_area += number_A
+        number_B -= 1
+    else:
+        break
+
+Square_area = 0
+
+while True:
+    limits = number_C
+    if limits > 0:
+        Square_area += number_C
+        limits -= 1
+    else:
+        break
+
+number_squares = 0;
+
+while True:
+    if Rectangle_area > 0:
+        number_squares += 1
+        Rectangle_area -= Square_area
+    else:
+        break
+
+print('Number of squares placed on a rectangle = ', number_squares)
