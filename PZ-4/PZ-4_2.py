@@ -20,31 +20,37 @@ number_A = check('Enter number A: ')
 number_B = check('Enter number B: ')
 number_C = check('Enter number C: ')
 
-Rectangle_area = 0
+rectangle_area = 0
+
+# print("----")
 
 while True:
     if number_B > 0:
-        Rectangle_area += number_A
+        rectangle_area += number_A
         number_B -= 1
     else:
         break
 
-Square_area = 0
+square_area = 0
 
+# print("----")
+
+limits = number_C
 while True:
-    limits = number_C
     if limits > 0:
-        Square_area += number_C
+        square_area += number_C
         limits -= 1
     else:
         break
 
 number_squares = 0;
 
+# print("----")
+
 while True:
-    if Rectangle_area > 0:
+    if rectangle_area > 0:
         number_squares += 1
-        Rectangle_area -= Square_area
+        rectangle_area -= square_area
     else:
         break
 
