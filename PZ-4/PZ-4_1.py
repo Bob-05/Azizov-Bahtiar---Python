@@ -2,8 +2,8 @@
 # Вывести в порядке возрастания все целые числа,
 # расположенные между A и B (включая сами числа A и B), а также количество этих чисел.
 
-def check(digit):
-    value = input(digit)
+def check(type_string):
+    value = input(type_string)
 
     while type(value) != int:
         try:
@@ -12,7 +12,7 @@ def check(digit):
                 return value
         except ValueError:
             print("Enter a digit!!!")
-            value = input(digit)
+            value = input(type_string)
 
 number_A = 0
 number_B = 0
