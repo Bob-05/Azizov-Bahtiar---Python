@@ -9,20 +9,23 @@ def check(digit):
         try:
             value = int(value)
             if type(value) == int:
-                if value > 0:
-                    return value
+                return value
         except ValueError:
             print("Enter a digit!!!")
             value = input(digit)
 
 
+number_A = 0
+number_B = 0
+
 while True:
     number_A = check('Enter number A: ')
     number_B = check('Enter number B: ')
-    if number_A > number_B:
+    print(type(number_B))
+    if number_A < number_B:
         break
     else:
-        print('Error - incorrect input!!!')
+        print('Error - incorrect input!!! (A < B)')
 
 number_N = number_A
 
