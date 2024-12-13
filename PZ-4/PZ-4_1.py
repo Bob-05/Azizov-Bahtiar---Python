@@ -14,7 +14,6 @@ def check(digit):
             print("Enter a digit!!!")
             value = input(digit)
 
-
 number_A = 0
 number_B = 0
 
