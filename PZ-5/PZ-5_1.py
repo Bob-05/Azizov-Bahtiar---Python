@@ -13,6 +13,11 @@ def check(type_string) -> object:
 
 
 user_digit = check('Enter digit: ')
-def aspiration_to_zero(user_dg): pass
+def aspiration_to_zero(user_dg):
+    number = 10
+    new_digit = 0
+    while user_dg > 0:
+        new_digit += user_dg / number
+        number *= 10
 
 

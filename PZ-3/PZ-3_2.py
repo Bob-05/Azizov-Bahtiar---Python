@@ -9,7 +9,7 @@ def check(digit):
             value = float(value)
             if type(value) == float:
                 return value
-        except:
+        except ValueError:
             print("Enter a digit!!!")
             value = input(digit)
 
