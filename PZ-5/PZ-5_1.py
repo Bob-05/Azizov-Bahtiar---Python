@@ -14,19 +14,10 @@ def check(type_string) -> object:
 
 user_digit = check('Enter digit: ')
 def aspiration_to_zero(user_dg):
-    counter = 0
+    number = 10
     new_digit = 0
-    while True:
-        number = 10
-        while user_dg % number >= 0 :
-            new_digit += new_digit % number
-            number *= 10
-            print("...")
-        user_dg = new_digit
-        new_digit = 0
-        print("...")
-        counter += 1
-        if user_dg % number < 0:
-            return counter
+    while user_dg > 0:
+        new_digit += user_dg / number
+        number *= 10
 
-print ("Number of actions = ", aspiration_to_zero(user_digit))
+
