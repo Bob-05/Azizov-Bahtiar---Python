@@ -20,18 +20,20 @@ number_B = 0
 while True:
     number_A = check('Enter number A: ')
     number_B = check('Enter number B: ')
-    print(type(number_B))
+    #print(type(number_B))
     if number_A < number_B:
         break
     else:
         print('Error - incorrect input!!! (A < B)')
 
-number_N = number_A
+number_limits = number_A
+number_N = 0
 
 while True:
-    print("--", number_N)
-    number_N += 1
-    if number_N > number_B:
+    if number_limits > number_B:
         break
+    print("--", number_limits)
+    number_N += 1
+    number_limits += 1
 
 print("Number of whole numbers between", number_A, "and ", number_B, " = ", number_N)
