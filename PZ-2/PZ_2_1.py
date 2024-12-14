@@ -13,7 +13,8 @@ def get_positive_int (promt):
                 print("Enter a number greater than zero.")
 
         except ValueError:
-            print("Incorrect input!!! Enter a positive integer")
+            print("Incorrect input!!! Enter a positive integer!!!")
+
 
 
 weight_candies_old = get_positive_int('Enter the weight of the candies in kilograms: ')
