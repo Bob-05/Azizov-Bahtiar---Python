@@ -6,18 +6,26 @@ def check(type_string) -> object:
         try:
             value = float(value)
             if type(value) == float:
-                return
+                return value
         except ValueError:
             print("TypeError!!!")
             value = input(type_string)
 
 
-user_digit = check('Enter digit: ')
+def sum_of_digits(n):
+    n = abs(n)
+    if n == 0:
+        return 0
+    else:
+        return n % 10 + sum_of_digits(n // 10)
+
 def aspiration_to_zero(user_dg):
-    number = 10
-    new_digit = 0
+    limit = 0
     while user_dg > 0:
-        new_digit += user_dg / number
-        number *= 10
+        user_dg -= sum_of_digits(user_dg)
+        limit +=1
+    return limit
 
-
+input_digit = check('Enter digit: ')
+input_digit = aspiration_to_zero(input_digit)
+print("The number of steps to reach zero: ", input_digit)
