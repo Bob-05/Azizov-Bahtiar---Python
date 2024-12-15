@@ -1,3 +1,8 @@
+# Описать функцию PowerA234(параметры), вычисляющую вторую, третью и
+# четвертую степень числа A и возвращающую эти степени соответственно в переменные B, C и D.
+# С помощью этой функции найти вторую, третью и четвертую степень пяти данных чисел.
+
+
 def check(type_string) -> object:
     value = input(type_string)
 
@@ -20,7 +25,7 @@ def PowerA234(A):
 numbers = []
 
 for i in range(5):
-    number = float(input(f"Enter a number {i + 1}: "))
+    number = check(f"Enter a number {i + 1}: ")
     numbers.append(number)
 
 
