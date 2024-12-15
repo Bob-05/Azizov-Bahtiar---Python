@@ -20,10 +20,10 @@ def PowerA234(A):
 numbers = []
 
 for i in range(5):
-    number = float(input(f"Введите число {i + 1}: "))
+    number = float(input(f"Enter a number {i + 1}: "))
     numbers.append(number)
 
 
 for num in numbers:
     B, C, D = PowerA234(num)
-    print(f"Число: {num}, Вторая степень: {B}, Третья степень: {C}, Четвертая степень: {D}")
+    print(f"Number: {num}, Second degree: {B}, Third degree: {C}, Fourth degree: {D}")
