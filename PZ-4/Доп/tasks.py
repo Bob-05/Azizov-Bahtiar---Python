@@ -52,6 +52,7 @@ def factorial(num):
     return result
 
 
+
 # Основная программа
 n = int(input("Введите n (n > 1): "))
 if n <= 1:
