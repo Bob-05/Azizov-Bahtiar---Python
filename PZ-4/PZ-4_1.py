@@ -20,7 +20,6 @@ number_B = 0
 while True:
     number_A = check('Enter number A: ')
     number_B = check('Enter number B: ')
-    #print(type(number_B))
     if number_A < number_B:
         break
     else:
