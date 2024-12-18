@@ -2,7 +2,7 @@
 # Из результата вновь вычли сумму его цифр и т. д.
 # Через сколько таких действий получится нуль?
 
-def check(type_string) -> object:
+def check(type_string):
     value = input(type_string)
 
     while type(value) != float:

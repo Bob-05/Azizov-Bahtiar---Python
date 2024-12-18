@@ -3,7 +3,7 @@
 # С помощью этой функции найти вторую, третью и четвертую степень пяти данных чисел.
 
 
-def check(type_string) -> object:
+def check(type_string):
     value = input(type_string)
 
     while type(value) != float:
