@@ -28,4 +28,4 @@ def check_parentheses(s):
     return 0
 
 string_user = str(input("Enter the string: "))
-print(f"Лог программы: {check_parentheses(string_user)}")
+print(f"Program log: {check_parentheses(string_user)}")
