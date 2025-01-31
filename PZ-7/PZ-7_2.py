@@ -5,19 +5,27 @@
 или номер позиции, в которой расположена первая ошибочная скобка, или, если
 закрывающих скобок не хватает, число —1
 """
-def check_for_my_symbol(a):
-    list_my_symbol = ['(',')','{','}','[',']']
-    list_user_symbol = str()
-    for i in a:
-        for j in list_my_symbol:
-            if i == j:
-                list_user_symbol += i
-
-    return list_user_symbol
 
 
+def check_parentheses(s):
+    # Стек для хранения открывающих скобок
+    stack = []
 
-string_user = str(input("Введите текст: "))
-print(type(string_user), " " , check_for_my_symbol(string_user))
+    for index, char in enumerate(s):
+        if char in '([{':
+            stack.append((char, index + 1))
+        elif char in ')]}':
+            # Если стек пуст или верхний элемент стека не соответствует закрывающей скобке
+            if not stack:
+                return index + 1
+            top_char, top_index = stack.pop()
+            if (char == ')' and top_char != '(') or (char == ']' and top_char != '[') or (char == '}' and top_char != '{'):
+                return index + 1
+    # недостаток элементов
+    if stack:
+        return -1
+    # всё верно
+    return 0
 
-#for elem in string_user:
+string_user = str(input("Enter the string: "))
+print(f"Лог программы: {check_parentheses(string_user)}")
