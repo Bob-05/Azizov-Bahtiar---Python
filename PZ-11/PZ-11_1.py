@@ -43,10 +43,8 @@ def check(type_string):
 
 
 def negative_int_s(str_file):
-    list_file = list(str_file.split())
     sum_int = 0
     for i in str_file:
-        i = int(i)
         if i % 2 == 0:
             sum_int += int(i)
     return sum_int
