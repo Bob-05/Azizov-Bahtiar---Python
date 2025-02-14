@@ -14,6 +14,7 @@ def check(type_string):
             print("Enter a digit!!!")
             value = input(type_string)
 
+
 number_A = 0
 number_B = 0
 

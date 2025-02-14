@@ -11,21 +11,57 @@
 """
 
 
-def integer():
-    print("Введите отрицательные целые числа")
-    integer_list = list()
-
-    while True:
-        i = 1
+# функции для удобства
+def integer(counter):
+    integer_list = str()
+    for i in range(counter):
         try:
-            int_user = int(input("Введите отрицательные/положительные числа: "))
-            integer_list.append(int_user)
+            int_user = int(input("Введите отрицательное/положительное число: "))
+            str_user = str(int_user)
+            # print(int_user)
+            if i == (counter - 1):
+                integer_list += str_user
+            else:
+                integer_list += (str_user + " ")
+
         except ValueError:
             print("Неверный ввод!!!")
+    return integer_list
 
 
-#integer = [1, 2, 3, 4, 5, -1, -2, -3, -4, -5]
+def check(type_string):
+    value = input(type_string)
+
+    while type(value) != int:
+        try:
+            value = int(value)
+            if type(value) == int:
+                return value
+        except ValueError:
+            print("Введите целое число!!!")
+            value = input(type_string)
+
+
+def negative_int_s(str_file):
+    list_file = list(str_file.split())
+    sum_int = 0
+    for i in str_file:
+        i = int(i)
+        if i % 2 == 0:
+            sum_int += int(i)
+    return sum_int
+
+
+# основной код программы
+counter_us = check("Введите количество символов: ")
 
 f1 = open("my_one_file.txt", 'w')
-f1.writelines(str(integer))
+f1.writelines(str(integer(counter_us)))
+f1.close()
+
+f1 = open("my_one_file.txt", 'r')
+str_from_file = f1.readlines()
+print(f"Исходные данные --> \033[1;32m{str_from_file}\033[0;37m")
+print(f"Отрицательные нечётные элементы: ")
+print(f"Сумма отрицательных нечетных элементов: \033[1;32m{negative_int_s(str_from_file)} \033[0;37m")
 f1.close()
