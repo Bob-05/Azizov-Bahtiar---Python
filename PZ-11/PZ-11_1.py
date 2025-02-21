@@ -13,16 +13,13 @@
 
 # функции для удобства
 def integer(counter):
-    integer_list = str()
+    integer_list = list()
     for i in range(counter):
         try:
             int_user = int(input("Введите отрицательное/положительное число: "))
             str_user = str(int_user)
             # print(int_user)
-            if i == (counter - 1):
-                integer_list += str_user
-            else:
-                integer_list += (str_user + " ")
+            integer_list.append(str_user)
 
         except ValueError:
             print("Неверный ввод!!!")
@@ -43,11 +40,13 @@ def check(type_string):
 
 
 def negative_int_s(str_file):
-    sum_int = 0
-    for i in str_file:
-        if i % 2 == 0:
-            sum_int += int(i)
-    return sum_int
+    int_neg = 0
+    for i in len(str_file[0]):
+        if int(str_file) < 0:
+            int_neg += int(str_file)
+    return int_neg
+
+
 
 
 # основной код программы
