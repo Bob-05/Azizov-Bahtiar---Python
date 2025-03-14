@@ -12,20 +12,6 @@
 
 
 # функции для удобства
-def integer(counter):
-    integer_list = list()
-    for i in range(counter):
-        try:
-            int_user = int(input("Введите отрицательное/положительное число: "))
-            str_user = str(int_user)
-            # print(int_user)
-            integer_list.append(str_user)
-
-        except ValueError:
-            print("Неверный ввод!!!")
-    return integer_list
-
-
 def check(type_string):
     value = input(type_string)
 
@@ -38,19 +24,49 @@ def check(type_string):
             print("Введите целое число!!!")
             value = input(type_string)
 
-def
+
+def integer(counter):
+    integer_list = list()
+    for i in range(counter):
+        try:
+            int_user = int(check("Введите отрицательное/положительное число: "))
+            # print(int_user)
+            integer_list.append(int_user)
+
+        except ValueError:
+            print("Неверный ввод!!!")
+    return integer_list
+
+
+def f_sum_neg_int(num_list):
+    sum_neg_int = 0
+    for i in sum_neg_int:
+        if i < 0 and not i % 2 == 0:
+            sum_neg_int += i
+    return sum_neg_int
+
+
+def f_neg_int(num_list):
+    neg_int = list()
+    for i in num_list:
+        if i < 0 and not i % 2 == 0:
+            neg_int.append(i)
+    return neg_int
+
 
 # основной код программы
-counter_us = check("Введите количество символов: ")
-negative_num = -1
-sum_negative_num = sum(x for x in counter_us if x < 0 and not x % 2 == 0)
+num = check("Введите количество символов: ")
+integer_l = integer(num)
+negative_num = f_neg_int(integer_l)
+sum_negative_num = f_sum_neg_int(integer_l)
 
 f1 = open("my_one_file.txt", 'w')
-f1.writelines(str(integer(counter_us)))
+f1.writelines(str(integer(integer_l)))
 
-print(f"Исходные данные --> \033[1;32m{counter_us}\033[0;37m", file=f1)
+print(f"Исходные данные --> \033[1;32m{integer_l}\033[0;37m", file=f1)
 print(f"Отрицательные нечётные элементы: {negative_num}", file=f1)
 print(f"Сумма отрицательных нечетных элементов: \033[1;32m{sum_negative_num}", file=f1)
-print(f"", file=f1)
+print(f"Среднее арифметическое отрицательных нечетных элементов: {float(sum_negative_num / len(negative_num))}",
+      file=f1)
 
 f1.close()
