@@ -62,10 +62,14 @@ sum_negative_num = f_sum_neg_int(integer_l)
 
 f1 = open("my_one_file.txt", 'w')
 
-print(f"Исходные данные --> \033[1;32m{integer_l}\033[0;37m", file=f1)
+print(f"Исходные данные --> {integer_l}", file=f1)
 print(f"Отрицательные нечётные элементы: {negative_num}", file=f1)
-print(f"Сумма отрицательных нечетных элементов: \033[1;32m{sum_negative_num}", file=f1)
+print(f"Сумма отрицательных нечетных элементов: {sum_negative_num}", file=f1)
 print(f"Среднее арифметическое отрицательных нечетных элементов: {float(sum_negative_num / len(negative_num))}",
       file=f1)
-
 f1.close()
+
+print(f"\nИсходные данные --> \033[1;32m{integer_l}\033[0;37m")
+print(f"Отрицательные нечётные элементы: {negative_num}")
+print(f"Сумма отрицательных нечетных элементов: \033[1;32m{sum_negative_num}\033[0;37m")
+print(f"Среднее арифметическое отрицательных нечетных элементов: {float(sum_negative_num / len(negative_num))}")
