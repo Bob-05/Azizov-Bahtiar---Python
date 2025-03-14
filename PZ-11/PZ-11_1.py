@@ -40,7 +40,7 @@ def integer(counter):
 
 def f_sum_neg_int(num_list):
     sum_neg_int = 0
-    for i in sum_neg_int:
+    for i in num_list:
         if i < 0 and not i % 2 == 0:
             sum_neg_int += i
     return sum_neg_int
@@ -61,7 +61,6 @@ negative_num = f_neg_int(integer_l)
 sum_negative_num = f_sum_neg_int(integer_l)
 
 f1 = open("my_one_file.txt", 'w')
-f1.writelines(str(integer(integer_l)))
 
 print(f"Исходные данные --> \033[1;32m{integer_l}\033[0;37m", file=f1)
 print(f"Отрицательные нечётные элементы: {negative_num}", file=f1)
