@@ -38,27 +38,19 @@ def check(type_string):
             print("Введите целое число!!!")
             value = input(type_string)
 
-
-def negative_int_s(str_file):
-    int_neg = 0
-    for i in len(str_file[0]):
-        if int(str_file) < 0:
-            int_neg += int(str_file)
-    return int_neg
-
-
-
+def
 
 # основной код программы
 counter_us = check("Введите количество символов: ")
+negative_num = -1
+sum_negative_num = sum(x for x in counter_us if x < 0 and not x % 2 == 0)
 
 f1 = open("my_one_file.txt", 'w')
 f1.writelines(str(integer(counter_us)))
-f1.close()
 
-f1 = open("my_one_file.txt", 'r')
-str_from_file = f1.readlines()
-print(f"Исходные данные --> \033[1;32m{str_from_file}\033[0;37m")
-print(f"Отрицательные нечётные элементы: ")
-print(f"Сумма отрицательных нечетных элементов: \033[1;32m{negative_int_s(str_from_file)} \033[0;37m")
+print(f"Исходные данные --> \033[1;32m{counter_us}\033[0;37m", file=f1)
+print(f"Отрицательные нечётные элементы: {negative_num}", file=f1)
+print(f"Сумма отрицательных нечетных элементов: \033[1;32m{sum_negative_num}", file=f1)
+print(f"", file=f1)
+
 f1.close()
