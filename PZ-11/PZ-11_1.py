@@ -60,7 +60,7 @@ integer_l = integer(num)
 negative_num = f_neg_int(integer_l)
 sum_negative_num = f_sum_neg_int(integer_l)
 
-f1 = open("my_one_file.txt", 'w', encoding="UTF-8")
+f1 = open("file_pz11_1.txt", 'w', encoding="UTF-8")
 
 print(f"Исходные данные --> {integer_l}", file=f1)
 print(f"Отрицательные нечётные элементы: {negative_num}", file=f1)
