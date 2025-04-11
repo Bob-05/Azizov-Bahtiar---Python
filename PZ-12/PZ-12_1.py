@@ -11,11 +11,14 @@ import random
 
 def f_random_list():
     limits = random.randint(1, 100)
-    list_num = ()
     for i in range(limits):
-        list_num += random.randint(1, 100)
-        yield list_num
+        yield from [random.randint(1, 100)]
 
 
-for i in f_random_list:
-    print(i)
+A = [i for i in f_random_list()]
+B = [i for i in A if i % 2 == 0]
+C = [i for i in A if i % 2 == 1]
+
+print(f"\033[32mA\033[37m -> {A}")
+print(f"\033[32mB\033[37m -> {B}")
+print(f"\033[32mC\033[37m -> {C}")
