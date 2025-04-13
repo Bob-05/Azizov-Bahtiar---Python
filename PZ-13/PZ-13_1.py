@@ -4,14 +4,19 @@
 """
 
 import random
+size_matrix = range(random.randint(10, 20))
 
-def generate_matrix ():
-    limits = random.randint(0, 20)
-    for i in range(limits):
-        n = lambda for i in range(20): i = random.randint(1, 100)
-        yield n
+matrix_2 = [[j*random.randint(10, 100) for j in size_matrix] for i in range(random.randint(10, 40))]
+matrix_1 = [[j for j in i if j!= matrix_2[matrix_2.index(i)][0] and j != matrix_2[matrix_2.index(i)][-1]] for i in matrix_2 if  i != matrix_2[0] and i != matrix_2[-1]]
 
 
-matrix_2 = [i for i in generate_matrix()]
-print(matrix_2)
+
+print("\033[0;32m------------------------------Matrix_2--------------------------------\x1b[0;37m")
+for i in matrix_2:
+    print(i)
+
+print("\n\033[0;32m------------------------------Matrix_1--------------------------------\x1b[0;37m")
+
+for i in matrix_1:
+    print(i)
 
