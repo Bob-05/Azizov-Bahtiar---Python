@@ -4,10 +4,10 @@
 """
 
 import random
-size_matrix = range(random.randint(10, 20))
+size_matrix = range(random.randint(4, 6))
 
-matrix_2 = [[j*random.randint(10, 100) for j in size_matrix] for i in range(random.randint(10, 40))]
-matrix_1 = [[j for j in i if j!= matrix_2[matrix_2.index(i)][0] and j != matrix_2[matrix_2.index(i)][-1]] for i in matrix_2 if  i != matrix_2[0] and i != matrix_2[-1]]
+matrix_2 = [[j*random.randint(10, 100) for j in size_matrix] for i in range(random.randint(4, 6))]
+matrix_1 = [[j for j in i if j != matrix_2[matrix_2.index(i)][0] and j != matrix_2[matrix_2.index(i)][-1]] for i in matrix_2 if  i != matrix_2[0] and i != matrix_2[-1]]
 
 
 

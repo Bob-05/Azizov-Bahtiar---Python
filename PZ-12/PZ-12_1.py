@@ -10,14 +10,14 @@ import random
 
 
 def f_random_list():
-    limits = random.randint(1, 100)
+    limits = random.randint(5, 20)
     for i in range(limits):
         yield from [random.randint(1, 100)]
 
 
 A = [i for i in f_random_list()]
-B = [i for i in A if i % 2 == 0]
-C = [i for i in A if i % 2 == 1]
+B = [i for i in A if not i % 2]
+C = [i for i in A if i % 2]
 
 print(f"\033[32mA\033[37m -> {A}")
 print(f"\033[32mB\033[37m -> {B}")
