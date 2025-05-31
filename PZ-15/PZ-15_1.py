@@ -10,7 +10,7 @@ import sqlite3 as sq
 
 with sq.connect('base.db') as con:
     cur = con.cursor()
-    cur.execute("DROP TABLE IF EXISTS")
+    cur.execute("DROP TABLE IF EXISTS items")
     cur.execute("""CREATE TABLE IF NOT EXISTS items(
         id_item int PRIMARY KEY,
         name_item text NOT NULL,
@@ -22,13 +22,18 @@ with sq.connect('base.db') as con:
         )
         """)
 
-    info_for_table = [(1, 'Молоко', 'Пятёрочка', 100, 2500, 'литр', '120рую/литр'),
-                      (1, 'Кефир', 'Пятёрочка', 900, 2809, 'литр', '110рую/литр'),
-                      (1, 'Молоко', 'Пятёрочка', 100, 2500, 'литр', '120рую/литр'),
-                      (1, 'Молоко', 'Пятёрочка', 100, 2500, 'литр', '120рую/литр'),
-                      (1, 'Молоко', 'Пятёрочка', 100, 2500, 'литр', '120рую/литр'),
-                      (1, 'Молоко', 'Пятёрочка', 100, 2500, 'литр', '120рую/литр'),
-                      (1, 'Молоко', 'Пятёрочка', 100, 2500, 'литр', '120рую/литр'),
-                      (1, 'Молоко', 'Пятёрочка', 100, 2500, 'литр', '120рую/литр')]
+    info_for_table = [(1, 'Молоко', 'Пятёрочка', 100, 2500, 'литр', '120руб/литр'),
+                      (2, 'Кефир', 'Пятёрочка', 900, 2809, 'литр', '110руб/литр'),
+                      (3, 'Кола', 'Магнит', 1321, 1409, 'литр', '190руб/литр'),
+                      (4, 'Вода питьевая', 'Лента', 895, 205, 'литр', '20руб/литр'),
+                      (5, 'Вода газированая', 'Лента', 893, 207, 'литр', '27руб/литр'),
+                      ]
+    cur.executemany("INSERT INTO services VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", info_for_table)
 
+    cur.execute("SELECT * FROM items")
+    # print(cur.fetchall())
+    # cur.execute("SELECT * FROM ")
+    # print(cur.fetchall())
+    # cur.execute("SELECT * FROM ")
+    # print(cur.fetchall())
 
