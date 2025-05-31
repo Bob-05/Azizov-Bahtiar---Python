@@ -17,3 +17,4 @@ new_file = open("new_text.txt", "w", encoding="utf-8")
 new_text = re.sub("роман", "произведение", text)
 print(new_text, file=new_file)
 new_file.close()
+
