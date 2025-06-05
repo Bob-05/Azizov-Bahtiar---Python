@@ -33,6 +33,7 @@ with sq.connect('base.db') as con:
                       (9, 'Соль', 'Пятёрочка', 654, 1800, 'кг', '30руб/кг'),
                       (10, 'Масло подсолнечное', 'Магнит', 987, 900, 'литр', '150руб/литр')
                       ]
+
     cur.executemany("INSERT INTO items VALUES (?, ?, ?, ?, ?, ?, ?)", info_for_table)
 
     #cur.execute("SELECT * FROM items WHERE name_shop = 'Пятёрочка'")
