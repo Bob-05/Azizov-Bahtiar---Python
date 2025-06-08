@@ -19,6 +19,7 @@ class Square(Shape):
         return self.length * self.width
 
 
+
 class Rectangle(Shape):
     def area(self):
         return self.length * self.width
